@@ -12,8 +12,10 @@ SELECT degrees.* FROM degrees INNER JOIN departments ON degrees.department_id = 
 SELECT course_teacher.* FROM course_teacher INNER JOIN teachers ON course_teacher.course_id = teachers.id WHERE course_teacher.course_id = '44'; 
 
 
-4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il
-relativo dipartimento, in ordine alfabetico per cognome e nome
+4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
+
+SELECT students.* FROM students INNER JOIN degrees ON students.degree_id = degrees.id INNER JOIN departments ON degrees.id = departments.id ORDER BY students.name AND students.surname ASC; 
+
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
